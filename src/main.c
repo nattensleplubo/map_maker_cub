@@ -22,11 +22,7 @@ t_data	*_data(void)
 	return (data);
 }
 
-void	menu(void)
-{
-}
-
-void	init(void)
+void	init_menu(void)
 {
 	_data()->graphics->mlx_ptr = NULL;
 	_data()->graphics->menu_ptr = NULL;
@@ -41,6 +37,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	(void)argv;
-	init();
-	menu();
+	init_menu();
+	hooks_menu();
+	mlx_loop(_data()->graphics->mlx_ptr);
 }
