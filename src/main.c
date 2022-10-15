@@ -24,9 +24,6 @@ t_data	*_data(void)
 
 void	menu(void)
 {
-	_data()->graphics->mlx_ptr = mlx_init();
-	_data()->graphics->menu_ptr = mlx_new_window(_data()->graphics->mlx_ptr, MENU_HEIGHT, MENU_WIDTH, "MENU");
-	_data()->graphics->menu_img.image = mlx_new_image(_data()->graphics->mlx_ptr, MENU_WIDTH, MENU_HEIGHT);
 }
 
 void	init(void)
@@ -34,6 +31,9 @@ void	init(void)
 	_data()->graphics->mlx_ptr = NULL;
 	_data()->graphics->menu_ptr = NULL;
 	_data()->graphics->menu_img.image = NULL;
+	_data()->graphics->mlx_ptr = mlx_init();
+	_data()->graphics->menu_ptr = mlx_new_window(_data()->graphics->mlx_ptr, MENU_HEIGHT, MENU_WIDTH, "MENU");
+	_data()->graphics->menu_img.image = mlx_new_image(_data()->graphics->mlx_ptr, MENU_WIDTH, MENU_HEIGHT);
 }
 
 int	main(int argc, char **argv)
