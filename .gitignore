@@ -1,4 +1,4 @@
 *.o
 *.d
 map_maker
-./bin
+bin/
