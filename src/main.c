@@ -43,6 +43,7 @@ void	hooks_menu(void)
 	_data()->graphics->menu_img.image = mlx_get_data_addr(_data()->graphics->menu_img.image, &_data()->graphics->menu_img.bpp, &_data()->graphics->menu_img.line_length, &_data()->graphics->menu_img.endian);
 	mlx_hook(_data()->graphics->menu_ptr, 17, 0L, exit_game, NULL);
 	mlx_key_hook(_data()->graphics->menu_ptr, &print_menu, NULL);
+	mlx_loop_hook(_data()->graphics->mlx_ptr, &update_window, NULL);
 }
 
 int	main(int argc, char **argv)

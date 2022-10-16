@@ -93,5 +93,6 @@ typedef struct	s_mlx
 t_data	*_data(void);
 int	print_menu(int keycode);
 void     ft_put_rectangle(t_img *img, int x0, int y0, int x1, int y1, int color);
+int	update_window(void);
 
 #endif
