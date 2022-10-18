@@ -6,6 +6,9 @@ int	ft_tabsize(char **tab)
 
 	i = 0;
 	while (tab[i])
+	{
+		printf("%s",tab[i]);
 		i++;
+	}
 	return (i);
 }

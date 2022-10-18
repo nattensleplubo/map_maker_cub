@@ -6,7 +6,7 @@
 # define MENU_WIDTH 500
 # define MENU_HEIGHT 500
 
-# define TILE_SIZE 10
+# define TILE_SIZE 30
 
 # define KEY_ESC 65307
 # define KEY_Q 113
@@ -32,6 +32,7 @@
 # define TEAL 0x008080 
 # define BLUE 0x0000FF 
 # define AQUA 0x00FFFF
+# define PINK 0xFFC0CB
 
 # define SOL_1 0xF89F5B
 # define XMUR_1 0xE53F71
@@ -69,6 +70,7 @@ typedef struct	s_data
 	int				curs_coord[2];
 	struct s_mlx	*graphics;
 	
+	int				map_created;
 }	t_data;
 
 typedef struct	s_img
@@ -85,14 +87,18 @@ typedef struct	s_mlx
 	void	*mlx_ptr;
 	void	*editor_ptr;
 	void	*menu_ptr;
+	void	*window_ptr;
 	t_img	menu_img;
 	t_img	editor_img;
 }	t_mlx;
 
 //! PROTOS
 t_data	*_data(void);
-int	print_menu(int keycode);
+int		print_menu(int keycode);
 void     ft_put_rectangle(t_img *img, int x0, int y0, int x1, int y1, int color);
-int	update_window(void);
+int		update_window(void);
+void	render_background(t_img *img, int color);
+int		exit_game();
+int		editor_key(int keycode);
 
 #endif
