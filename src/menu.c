@@ -79,6 +79,7 @@ void	write_map(void)
 {
 	int	fd = open(_data()->map_name, O_RDWR | O_TRUNC);
 	int i = 0;
+	int	j = 0;
 
 	write(fd, "NO sprites/Bricks.xpm\n", 22);
 	write(fd, "EA sprites/Castle-Wall.xpm\n", 27);
@@ -87,9 +88,21 @@ void	write_map(void)
 	write(fd, "F 252,253,255\n", 14);
 	write(fd, "C 1,2,2\n\n", 9);
 
-	while (_data()->map[i])
+	// while (_data()->map[i])
+	// {
+	// 	write(fd, _data()->map[i], ft_strlen(_data()->map[i]));
+	// 	i++;
+	// }
+
+	while (i < _data()->map_size)
 	{
-		write(fd, _data()->map[i], ft_strlen(_data()->map[i]));
+		j = 0;
+		while (j < _data()->map_size)
+		{
+			write(fd, &_data()->map[j][i], 1);
+			j++;
+		}
+		write(fd, "\n", 1);
 		i++;
 	}
 
